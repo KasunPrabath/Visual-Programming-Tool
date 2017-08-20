@@ -1,0 +1,42 @@
+.......If..........
+
+{type : "if"
+ func : [ {input1 : 3, op : "<", input2 : 5, next : OR },
+          {input1 : 2, op : "=", input2 : 1, next : AND },
+	  	  {input1 : 2, op : ">", input2 : 5, next : END }]
+
+}
+
+
+......While.......
+
+{ type : "while",
+  func : [{input1 : x, op : "<", input2 : 5, next : OR },
+ 		{input1 : y, op : "=", input2 : 1, next : END }]
+}
+
+........Arithmetic........
+{type : "Arithmetic",
+ func : {a : 5,b : 4, op : "add"}
+
+}
+
+........Split..........
+{type :split, 
+ func : {op :"/", input :"Hello/World"}
+ }
+ 
+ 
+ .......Join.........
+ {type : "join",
+   func : [{op :"/"},{val1 : "E"},{val2 : "13"},{val3 : "041"}]
+ 
+ }
+ 
+ 
+ ........Replace......
+ {type : "replace",
+  func : {inputstring1 : "Hello World",
+		  inputstring2 : "World",
+		  replacestring : "People"} 
+}

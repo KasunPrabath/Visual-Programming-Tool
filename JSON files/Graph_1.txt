@@ -1,0 +1,37 @@
+input string = "Hello World"
+
+{type :split, 
+ func : {op :" ", input :"Hello World"},
+ name : "split_1",
+ connected to : [node_1 : {type : "if"
+  						   func : [ {input1 : split_1.str1, op : "==", input2 : split_1.str2, next : END }],
+                           name : "if_1",
+ 						   connected to : [if_branch : [node_1 : {type : "replace",
+  																  func : {inputstring1 : "Hello World",
+		               												      inputstring2 : "World",
+		                                                                  replacestring : "Universe"} 
+
+																  name : "replace_1",
+ 																  connected to :[null] 	  
+																  }
+														],
+
+											else_branch : [node_1 : {type : "Arithmetic",
+ 																	 func : {a : 10,b : 20, op : "add"}
+                                                                     name : "arithmetic_1",
+ 																     connected to :[null]
+																	}
+														   ]
+										   ]
+ 				   		   }
+				]
+}
+
+
+
+
+
+
+
+
+

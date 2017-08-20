@@ -1,0 +1,40 @@
+........Split..........
+
+{type :split, 
+ func : {op :"/", input :"Hello/World"},
+ 
+ name : split_1,
+ connected to : [null]
+ }
+
+
+ .......If..........
+
+{type : "if"
+ func : [ {input1 : 3, op : "<", input2 : 5, next : OR },
+          {input1 : 2, op : "=", input2 : 1, next : AND },
+	  	  {input1 : 2, op : ">", input2 : 5, next : END }],
+ 
+ name : if_1,
+ connected to : [if_branch : [node_1 : A, node_2 : B, node_3 : C],
+ 				 else_branch : [node_1 : A, node_2 : B, node_3 : C]]
+}
+
+
+........Replace......
+ {type : "replace",
+  func : {inputstring1 : "Hello World",
+		  inputstring2 : "World",
+		  replacestring : "People"} 
+
+	name : replace_1,
+ 	connected to :	  
+}
+
+........Arithmetic........
+{type : "Arithmetic",
+ func : {a : 5,b : 4, op : "add"}
+
+ 	name : arithmetic_1,
+ 	connected to :
+}

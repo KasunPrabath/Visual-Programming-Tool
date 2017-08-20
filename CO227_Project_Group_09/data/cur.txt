@@ -1,0 +1,45 @@
+{
+
+	"graph" : [{"type":"massage",
+               "name" : "arg",
+               "func":["S SLR 1000","1 150"],
+               "con_true":["split_1"],
+               "con_false":[],
+               "system" : "false"},
+
+                {"type":"split",
+                "name" : "split_1",
+                "func":[" ", "arg.0"],
+                "con_true":["split_2"],
+                "con_false":[],
+                "system" : "true"},
+
+              {"type":"split",
+              "name" : "split_2",
+              "func":[" ", "arg.1"],
+              "con_true":["arithmetic_1"],
+              "con_false":[],
+              "system" : "true"},
+
+                  {"type":"arithmetic",
+                  "name" : "arithmetic_1",
+                  "func":["/","split_2.1","split_2.0"],
+                  "con_true":["arithmetic_2"],
+                  "con_false":[],
+                  "system" : "true"},
+
+                 {"type":"arithmetic",
+                  "name" : "arithmetic_2",
+                  "func":["*","split_1.2","arithmetic_1.0"],
+                  "con_true":[],
+                  "con_false":[],
+                  "system" : "true"},
+
+                  {"type":"output",
+                  "name" : "output",
+                  "func":["arithmetic_2.0"],
+                  "con_true":[],
+                  "con_false":[],
+                  "system" : "true"}
+               ]
+}

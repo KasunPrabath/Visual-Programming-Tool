@@ -1,0 +1,16 @@
+{
+  "type": "split",
+  "func": [" ","10 20"],
+  "name": "split_1",
+  "connected_to": [{
+                    "type": "Arithmatic",
+                    "func": ["+","10","20"],
+                    "name": "Ar_1",
+                    "connected_to":[{
+                                        "type": "join",
+                                        "func":[" = ","10 20","30"],
+                                        "name": "join_1",
+                                        "connected_to":[{}]
+                                        }]
+                    }]
+  }

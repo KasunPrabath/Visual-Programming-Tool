@@ -1,0 +1,28 @@
+1) This Project done by using IntelliJ IDE on linux OS.
+2) To run this project it needed JaCKSON library.
+3) Library is included in the lib folder.
+4) First import the JaCKSON library.
+5) Then put the JSON reprasantation of the graph in the data folder
+   (example JSON reprasantations are already in the folder)
+   and make sure JSON file path and Main.java line 24 path is same.
+6) execute the Main.java file   
+7) Code will generate as Program.java in the output folder
+8) execute the run.sh.
+7) shell script(run.sh) is used to compile, make Program.jar file and execute the Program.jar file.
+
+/**important**/
+All the nodes represanted in JSON should have following structure
+
+# exmple split node reprasantation
+
+                {"type":"split",
+                "name" : "split_1",
+                "func":[" ", "arg.0"],
+                "con_true":["while_1"],
+                "con_false":[],
+                "system" : "true"}
+
+# con_true -> next connected nodes
+# con_false -> except for and if nodes this is empty
+
+

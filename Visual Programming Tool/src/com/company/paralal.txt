@@ -1,0 +1,34 @@
+{
+	"type": "split",
+	"func": [" ",
+		    "10 15"
+			],
+	"name": "split_1",
+    "connected_to": [{"type": "Arithmatic",
+                         "func": ["*","10","4"],
+                         "name": "Ar_1",
+                         "connected_to":[{}]},
+
+                         {"type": "Replace",
+                         "func": ["A car A bus A jet A boy A girl",
+                                  "A",
+                                  "The"],
+                         "name": "rep_1",
+                         "connected_to":[{}]},
+
+                         {"type":"if",
+                         "func":[">","5","2","END"],
+                         "name":"if_1",
+                         "connected_to":[ {"type": "Replace",
+                                           "func": ["A car A bus A jet A boy A girl",
+                                                    "A",
+                                                    "The"],
+                                           "name": "rep_1",
+                                           "connected_to":[{}]},
+                                           {}]
+                         }]
+}
+
+
+
+

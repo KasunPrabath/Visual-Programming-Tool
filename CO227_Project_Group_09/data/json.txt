@@ -1,0 +1,77 @@
+{
+
+	"graph" : [{"type":"message",
+               "name" : "arg",
+               "func":["1 10 1"],
+               "con_true":["split_1"],
+               "con_false":[],
+               "system" : "false"},
+
+	            {"type":"split",
+                "name" : "split_1",
+                "func":[" ", "arg.0"],
+                "con_true":["while_1"],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"Replace",
+                "name" : "replace_1",
+                "func":["join_1.0","split_1.2","arithmetic_1.0"],
+                "con_true":[],
+                "con_false":[],
+                "system" : "false"},
+
+                {"type":"split",
+                "name" : "split_2",
+                "func":[" ", "arg.0"],
+                "con_true":[],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"while",
+                "name" : "while_1",
+                "func":["split_1.0"],
+                "con_true":[],
+                "con_false":["arithmetic_1"],
+                "system" : "true"},
+
+                {"type":"if_else",
+                "name" : "If_2",
+                "func":["split_1.1","==","split_1.2","END" ],
+                "con_true":[],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"Join",
+                "name" : "join_1",
+                "func":["/ ","split_1.0","split_1.1","split_1.2"],
+                "con_true":["If_2"],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"arithmetic",
+                "name" : "arithmetic_1",
+                "func":["+","split_1.1","split_1.2"],
+                "con_true":["join_1"],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"Join",
+                "name" : "join_2",
+                "func":[" = ","Join_1.0","arithmetic_1.0"],
+                "con_true":[],
+                "con_false":[],
+                "system" : "true"},
+
+                {"type":"Replace",
+                "name" : "replace_1",
+                "func":["join_1.0","split_1.2","arithmetic_1.0"],
+                "con_true":[],
+                "con_false":[],
+                "system" : "true"}
+            ]
+
+}
+
+
+

@@ -1,0 +1,60 @@
+/* This is how to represent the split operation */
+
+{
+	"type": "split",
+	"func": {
+		"op": "space",
+		"input": "Hello World"
+	},
+	"name": "split_1",
+	"connected to": [{
+		"type": "if",
+		"func": {
+			"input1": "split_1_x",
+			"op": "equal",
+			"input2": "split_1_y",
+			"next": "END"
+		},
+		"name": "if_1",
+		"connected to": [{
+			"type": "arithmetic",
+			"func": {
+				"a": 5,
+				"b": 4,
+				"op": "add"
+			},
+			"name": "arithmetic_1",
+			"connected to": "null"
+		}, {
+			"type": "arithmetic",
+			"func": {
+				"a": 5,
+				"b": 4,
+				"op": "multiply"
+			},
+			"name": "arithmetic_2",
+			"connected to": "null"
+		}]
+	}, {
+		"type": "else",
+		"func": {
+			"input1": "split_1_x",
+			"op": "notequal",
+			"input2": "split_1_y",
+			"next": "END"
+		},
+		"name": "el_1",
+		"connected to": {
+			"type": "join",
+			"func": [{
+				"op": "/"
+			}, {
+				"val1": "split_1_x"
+			}, {
+				"val2": "split_1_y"
+			}],
+			"name": "join_1",
+			"connected to": "null"
+		}
+	}]
+}
